@@ -11,4 +11,7 @@
   <h4 (click)="checkProfile(member)">Member's name: {{member.name}}</h4>
   <!-- <p>Where to contact {{member.name}}: {{member.email}}</p>
   <p>{{member.name}}'s duty: {{member.role}}</p> -->
+  <div *ngIf= "currentRoute === '/admin'">
+    <button (click)="deleteMember()">Delete this member</button>
+  </div>
 </div>

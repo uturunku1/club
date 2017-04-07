@@ -1,3 +1,30 @@
-<p>
-  admin works!
-</p>
+<h3><u>Administration Portal</u></h3>
+<form>
+  <label>Password (hint: admin. All lowercase): </label>
+  <input #password>
+  <button (click)="signIn(password.value)" class="btn btn-info">Sign in</button>
+</form>
+
+<div *ngIf= "rightPassword">
+  <h3>Welcome Stella!</h3>
+
+  <h2>Add a new member</h2>
+  <label>Name</label>
+  <input type="text" #name>
+  <label>Email address</label>
+  <input type="text" #email>
+  <label>Role in the club</label>
+  <select (change)="selectNewRole($event.target.value)">
+    <option value="">Select</option>
+    <option value="Snack supplier">Snack supplier</option>
+    <option value="Film critic">Film critic</option>
+  </select>
+  <br>
+  <button (click)="submitMember(name.value, email.value); name.value=''; email.value='';">Create member</button>
+  <br>
+  <app-home></app-home>
+</div>
+
+<div *ngIf= "wrongPassword">
+  <h3>Incorrect password. Please try again.</h3>
+</div>

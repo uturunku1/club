@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   members: FirebaseListObservable<any[]>;
   memberId;
   roleSelected= "all";
+  currentRoute:string = this.router.url;
 
   constructor(private router: Router, private memberService: MemberService) { }
 
