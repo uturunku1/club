@@ -13,11 +13,15 @@ import { MemberService } from './../member.service';
 export class HomeComponent implements OnInit {
 
   members: FirebaseListObservable<any[]>;
+  memberId;
 
-  constructor(private memberService: MemberService) { }
+  constructor(private router: Router, private memberService: MemberService) { }
 
   ngOnInit() {
     this.members= this.memberService.getMembers();
+  }
+  checkProfile(member){
+    this.router.navigate(['profiles', member.$key]);
   }
 
 }

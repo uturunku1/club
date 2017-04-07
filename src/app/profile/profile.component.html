@@ -1,3 +1,4 @@
-<p>
-  profile works!
-</p>
+<h3>{{(memberToDisplay | async)?.name}}' profile</h3>
+<h4>Where to contact {{(memberToDisplay|async)?.name}}: {{(memberToDisplay | async)?.email}}</h4>
+<h4>{{(memberToDisplay| async)?.name}}'s role: {{(memberToDisplay | async)?.role}}
+</h4>
