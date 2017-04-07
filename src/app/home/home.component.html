@@ -1,0 +1,7 @@
+<h3><u>List of club members</u></h3>
+
+<div *ngFor="let member of members | async">
+  <h4>Member's name: {{member.name}}</h4>
+  <p>Where to contact {{member.name}}: {{member.email}}</p>
+  <p>{{member.name}}'s duty: {{member.role}}</p>
+</div>

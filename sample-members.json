@@ -1,0 +1,15 @@
+{
+  "members":[{
+    "name": "Stella",
+    "email": "luces.huayhuaca@gmail.com",
+    "role": "President"
+    },{
+      "name": "Mike",
+      "email": "mike@gmail.com",
+      "role": "Film critic"
+    },{
+      "name": "Jason",
+      "email": "jason@gmail.com",
+      "role": "Snack supplier"
+    }]
+}
