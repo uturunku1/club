@@ -19,5 +19,9 @@ export class MemberService {
   addMember(newMember: Member){
     this.members.push(newMember);
   }
-
+  deleteInFirebase(thisMemberId){
+    let memberInFirebase = this.getMemberById(thisMemberId);
+    memberInFirebase.remove();
+  }
+  
 }

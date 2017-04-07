@@ -34,4 +34,5 @@ export class AdminComponent implements OnInit {
     this.memberService.addMember(newMember);
   }
 
+
 }

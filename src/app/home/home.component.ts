@@ -28,5 +28,8 @@ export class HomeComponent implements OnInit {
   selectByRole(roleSelected){
     this.roleSelected = roleSelected;
   }
+  deleteMember(thisMember){
+    this.memberService.deleteInFirebase(thisMember.$key);
+  }
 
 }
