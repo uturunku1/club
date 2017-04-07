@@ -12,10 +12,11 @@ export class RolesPipe implements PipeTransform {
       for(let i= 0; i< input.length; i++ ){
         if(roleSelected==="all"){
           output.push(input[i]);
-        }else{
-          if(input[i].role===roleSelected){
-            output.push(input[i]);
-          }
+        }else if (input[i].role===roleSelected){
+          // if(input[i].role===roleSelected){
+          //   output.push(input[i]);
+          // }
+          output.push(input[i]);
         }
       }
       return output;
