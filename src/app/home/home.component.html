@@ -1,6 +1,13 @@
 <h3><u>List of club members</u></h3>
 
-<div *ngFor="let member of members | async">
+<select (change)="selectByRole($event.target.value)">
+  <option value="all">All members</option>
+  <option value="President">Directors</option>
+  <option value="Film critic">Film critics</option>
+  <option value="Snack supplier">Snack suppliers</option>
+</select>
+<br>
+<div *ngFor="let member of members | async |roles: roleSelected">
   <h4 (click)="checkProfile(member)">Member's name: {{member.name}}</h4>
   <!-- <p>Where to contact {{member.name}}: {{member.email}}</p>
   <p>{{member.name}}'s duty: {{member.role}}</p> -->

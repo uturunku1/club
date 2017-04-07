@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   members: FirebaseListObservable<any[]>;
   memberId;
+  roleSelected= "all";
 
   constructor(private router: Router, private memberService: MemberService) { }
 
@@ -22,6 +23,9 @@ export class HomeComponent implements OnInit {
   }
   checkProfile(member){
     this.router.navigate(['profiles', member.$key]);
+  }
+  selectByRole(roleSelected){
+    this.roleSelected = roleSelected;
   }
 
 }
