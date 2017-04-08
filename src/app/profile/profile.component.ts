@@ -14,16 +14,28 @@ import { ActivatedRoute, Params} from '@angular/router';
   providers: [MemberService]
 })
 export class ProfileComponent implements OnInit {
-memberToDisplay;
+memberToDisplay: Member;
 memberId: string;
-
+formShow = false;
   constructor(private location: Location, private activatedRoute: ActivatedRoute, private memberService: MemberService, private router:Router) { }
 
   ngOnInit() {
     this.activatedRoute.params.forEach((urlParameters)=>{
       this.memberId = urlParameters['id'];
     });
-    this.memberToDisplay= this.memberService.getMemberById(this.memberId);
+    this.memberService.getMemberById(this.memberId).subscribe(dataLastEmittedFromObserver=>{
+      this.memberToDisplay= dataLastEmittedFromObserver;
+      // this.memberToDisplay= new Member(dataLastEmittedFromObserver.name,dataLastEmittedFromObserver.email,dataLastEmittedFromObserver.role);
+      // console.log(this.memberToDisplay);
+    });
+  }
+
+  toggleButton(){
+    this.formShow =  !this.formShow;
+  }
+  updateMember(thisMember){
+    alert("clicked");
+    this.memberService.updateDataMember(thisMember);
   }
 
 }

@@ -13,5 +13,6 @@
   <p>{{member.name}}'s duty: {{member.role}}</p> -->
   <div *ngIf= "currentRoute === '/admin'">
     <button (click)="deleteMember(member)">Delete this member</button>
+    <button (click)="editMember(member)">Update</button>
   </div>
 </div>

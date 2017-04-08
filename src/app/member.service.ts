@@ -23,5 +23,9 @@ export class MemberService {
     let memberInFirebase = this.getMemberById(thisMemberId);
     memberInFirebase.remove();
   }
-  
+  updateDataMember(thisMember){
+    let memberInFirebase = this.getMemberById(thisMember.$key);
+    memberInFirebase.update({name:thisMember.name, email:thisMember.email,role:thisMember.role});
+  }
+
 }

@@ -31,5 +31,8 @@ export class HomeComponent implements OnInit {
   deleteMember(thisMember){
     this.memberService.deleteInFirebase(thisMember.$key);
   }
+  editMember(thisMember){
+    this.router.navigate(['profiles', thisMember.$key]);
+  }
 
 }
