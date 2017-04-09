@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+.background{
+  /*height: 100%;*/
+  background: url("./resources/img/screen3.jpg") no-repeat center center;
+  background-size: 100%;
+  /*color: yellow;*/
+}
+
+.clickable{
+  cursor: pointer;
+  color: blue;
+}

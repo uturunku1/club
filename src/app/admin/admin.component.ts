@@ -13,6 +13,7 @@ export class AdminComponent implements OnInit {
   wrongPassword = false;
   role:string;
   password: string;
+  addForm;
 
   constructor(private memberService: MemberService) { }
 
@@ -46,6 +47,10 @@ export class AdminComponent implements OnInit {
   submitMember(name: string, email: string ){
     let newMember= new Member(name, email, this.role);
     this.memberService.addMember(newMember);
+    this.addForm=false;
+  }
+  showAddForm(){
+    this.addForm= true;
   }
 
 
