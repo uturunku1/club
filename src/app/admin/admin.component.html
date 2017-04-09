@@ -1,12 +1,13 @@
 <h3><u>Administration Portal</u></h3>
 <form>
   <label>Password (hint: admin. All lowercase): </label>
-  <input #password>
-  <button (click)="signIn(password.value)" class="btn btn-info">Sign in</button>
+  <input #inputPassword>
+  <button (click)="signIn(inputPassword.value)" class="btn btn-info">Sign in</button>
 </form>
 
-<div *ngIf= "rightPassword">
+<div *ngIf= "password">
   <h3>Welcome Stella!</h3>
+  <button (click)="signOut()">Sign Out</button>
 
   <h2>Add a new member</h2>
   <label>Name</label>

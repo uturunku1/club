@@ -10,22 +10,36 @@ import { Router } from '@angular/router';
   providers: [MemberService]
 })
 export class AdminComponent implements OnInit {
-  rightPassword = false;
   wrongPassword = false;
   role:string;
+  password: string;
 
   constructor(private memberService: MemberService) { }
 
   ngOnInit() {
   }
-
-  signIn(password){
-    if(password==="admin"){
-      this.rightPassword= true;
-    } else if(password!= "admin"){
+  ngDoCheck(){
+    this.password = this.memberService.retrieveSignIn();
+  }
+  // signIn(password){
+  //   if(password==="admin"){
+  //     this.rightPassword= true;
+  //   } else if(password!= "admin"){
+  //     this.wrongPassword= true;
+  //   }
+  // }
+  signIn(inputPassword){
+    inputPassword = inputPassword.trim();
+    if(inputPassword==="admin"){
+      this.memberService.saveSignIn(inputPassword);
+    } else if(inputPassword!= "admin"){
       this.wrongPassword= true;
     }
   }
+  signOut(){
+    this.memberService.signOut();
+  }
+
   selectNewRole(selectedRole){
     this.role = selectedRole;
   }

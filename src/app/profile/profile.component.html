@@ -24,9 +24,9 @@
   </select>
 </div>
 
-<!-- <div *ngIf="signIn"> -->
+<div *ngIf="password">
   <button class='btn btn-info' (click)="toggleButton()">
   <span *ngIf="!formShow">Edit this info</span>
   <span *ngIf="formShow" (click)="updateMember(memberToDisplay)">Update</span>
 </button>
-<!-- </div> -->
+</div>

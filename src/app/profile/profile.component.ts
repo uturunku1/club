@@ -16,10 +16,13 @@ import { ActivatedRoute, Params} from '@angular/router';
 export class ProfileComponent implements OnInit {
 memberToDisplay: Member;
 memberId: string;
+password: string;
 formShow = false;
   constructor(private location: Location, private activatedRoute: ActivatedRoute, private memberService: MemberService, private router:Router) { }
 
   ngOnInit() {
+    this.password = this.memberService.retrieveSignIn();
+
     this.activatedRoute.params.forEach((urlParameters)=>{
       this.memberId = urlParameters['id'];
     });
@@ -29,12 +32,13 @@ formShow = false;
       // console.log(this.memberToDisplay);
     });
   }
+  ngOnCheck(){
+  }
 
   toggleButton(){
     this.formShow =  !this.formShow;
   }
   updateMember(thisMember){
-    alert("clicked");
     this.memberService.updateDataMember(thisMember);
   }
 
